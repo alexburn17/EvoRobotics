@@ -1,17 +1,17 @@
 # length of leg
-L = 0.1
+L = 0.3
 
 # radius is length divided by 5
 R = L/5
 
 # length of video
-evalTime = 400
+evalTime = 700
 
 # size of population
-popSize = 20
+popSize = 5
 
 # number of generations
-numGens = 50
+numGens = 20
 
 # number of envirnoments
-numEnvs = 4
+numEnvs = 1

@@ -1,5 +1,5 @@
 import pyrosim
-from robot import ROBOT
+from robotTwo import ROBOT
 import constants as c
 import random
 import math
@@ -13,7 +13,7 @@ class INDIVIDUAL:
         self.ID = i
 
         # genome is a vector of random numbers
-        self.genome = numpy.random.random((5, 8)) * 2 - 1
+        self.genome = numpy.random.random((7, 12)) * 2 - 1
 
         # fitness level (0 at outset)
         self.fitness = 0
@@ -47,8 +47,8 @@ class INDIVIDUAL:
 
     def Mutate(self):
         # mutatates on of the genes based on a random number from 0 to three
-        geneToMutatei = random.randint(0, 4)
-        geneToMutatej = random.randint(0, 7)
+        geneToMutatei = random.randint(0, 6)
+        geneToMutatej = random.randint(0, 11)
         self.genome[geneToMutatei, geneToMutatej] = random.gauss(self.genome[geneToMutatei, geneToMutatej], math.fabs(self.genome[geneToMutatei, geneToMutatej]))
         #if (self.genome[geneToMutatei][geneToMutatej] > 1):
          #   self.genome[geneToMutatei][geneToMutatej] = 1
