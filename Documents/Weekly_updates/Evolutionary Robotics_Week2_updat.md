@@ -16,15 +16,15 @@ This week I created two robots that only have **active** joints upon which evolu
 
 **Video of robot 1:**
 
-
+https://www.youtube.com/watch?v=sTmgi2HVT2w
 
 **Video of robot 2:**
 
-
+https://www.youtube.com/watch?v=fpmQ2PLnWYM
 
 **Github Repo:**
 
-
+https://github.com/alexburn17/EvoRobotics
 
 
 
