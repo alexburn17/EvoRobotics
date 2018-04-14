@@ -1,10 +1,11 @@
 import pyrosim
-from robotTwo import ROBOT
 import constants as c
+from robotThree import ROBOT
 import random
 import math
 import numpy
-import copy
+
+
 
 class INDIVIDUAL:
     def __init__(self, i):
@@ -15,6 +16,7 @@ class INDIVIDUAL:
         # genome is a vector of random numbers
         self.genome = numpy.random.random((7, 12)) * 2 - 1
 
+
         # fitness level (0 at outset)
         self.fitness = 0
 
@@ -23,7 +25,7 @@ class INDIVIDUAL:
         # starts simulation
         self.sim = pyrosim.Simulator(play_paused=pp, eval_time=c.evalTime, play_blind=pb)
 
-        # call to function ROBOT which generates the scissor robot
+        # call to function ROBOT which generates the bot
         self.robot = ROBOT(self.sim, self.genome)
 
         env.Send_To(self.sim)
@@ -40,20 +42,22 @@ class INDIVIDUAL:
         sensorData1 = self.sim.get_sensor_data(sensor_id=self.robot.L4, svi=0)
 
         # and print the data
-        self.fitness = sensorData1[-1] + self.fitness
+        self.fitness = sensorData1[-1] + 0
 
         # deletes the copy of sim
         del self.sim
 
     def Mutate(self):
-        # mutatates on of the genes based on a random number from 0 to three
+        # mutatates one of the genes based on a random number from 0 to three
         geneToMutatei = random.randint(0, 6)
         geneToMutatej = random.randint(0, 11)
-        self.genome[geneToMutatei, geneToMutatej] = random.gauss(self.genome[geneToMutatei, geneToMutatej], math.fabs(self.genome[geneToMutatei, geneToMutatej]))
-        #if (self.genome[geneToMutatei][geneToMutatej] > 1):
-         #   self.genome[geneToMutatei][geneToMutatej] = 1
-        #elif (self.genome[geneToMutatei][geneToMutatej] < -1):
-         #   self.genome[geneToMutatei][geneToMutatej] = 1
+        self.genome[geneToMutatei, geneToMutatej] = random.gauss(self.genome[geneToMutatei, geneToMutatej],
+                                                                 math.fabs(self.genome[geneToMutatei, geneToMutatej]))
+
+        if (self.genome[geneToMutatei, geneToMutatej] > 1):
+            self.genome[geneToMutatei, geneToMutatej] = 1
+        elif (self.genome[geneToMutatei, geneToMutatej] < -1):
+            self.genome[geneToMutatei, geneToMutatej] = 1
 
     def Print(self):
 

@@ -5,13 +5,27 @@ L = 0.3
 R = L/5
 
 # length of video
-evalTime = 700
+evalTime = 1500
 
 # size of population
-popSize = 5
+popSize = 10
 
 # number of generations
-numGens = 20
+numGens = 100
 
-# number of envirnoments
+# number of environments
 numEnvs = 1
+
+# number of bars that make up rough environment
+numBars = 0
+
+# height of bars that make up rough environment
+heightBars = 0.05
+
+# distance from light sensor
+dist = 30
+
+# sample size is number of runs per treatment
+sampleSize = 5
+
+
