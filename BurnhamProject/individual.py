@@ -1,6 +1,6 @@
 import pyrosim
 import constants as c
-from robotThree import ROBOT
+from robotFour import ROBOT
 import random
 import math
 import numpy

@@ -53,7 +53,7 @@ for n in range(0, c.sampleSize):
     finalData.append(data)
 
 # write out csv file
-with open("Robot3_Smooth.csv", "a") as fp:
+with open("Robot4_Rough.csv", "a") as fp:
     wr = csv.writer(fp, delimiter=',', quoting=csv.QUOTE_ALL)
     wr.writerow(finalData)
 

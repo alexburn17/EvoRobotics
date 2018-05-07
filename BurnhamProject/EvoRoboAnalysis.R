@@ -20,18 +20,24 @@ library("car")
 setwd("~/EvoRobotics/BurnhamProject")
 
 # read in data:
-data <- read.table("TestData.csv", header=TRUE, sep = ",", stringsAsFactors = FALSE) 
-data1 <- read.table("output.csv", sep = ",", stringsAsFactors = FALSE)
+#BeeData <- read.table("2016_Bombus_Survey_Data.csv", header=TRUE, sep = ",", stringsAsFactors = FALSE) 
+
+data1 <- scan("Robot3_Smooth/Robot3_Smooth.csv", sep=',', what = "", quiet = TRUE)
+data1 <- as.numeric(data1)
+#data1 <- na.omit(data1)
+#dat <- data1[-c(1:868)]
+
+
 
 # turn data set into a matrix of gen by n:
 data1 <- as.vector(data1)
-names(data1) <- NULL
-data1 <- as.numeric(data1)
-mat <- matrix(data1, ncol=4)
+#names(data1) <- NULL
+mat <- matrix(data1, ncol=30)
 
 # calculate row means to get vector to plot by
 rowMeans(mat)
 
+plot(1:199,rowMeans(mat))
 
 
 

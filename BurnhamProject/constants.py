@@ -11,13 +11,13 @@ evalTime = 1500
 popSize = 10
 
 # number of generations
-numGens = 100
+numGens = 200
 
 # number of environments
 numEnvs = 1
 
 # number of bars that make up rough environment
-numBars = 0
+numBars = 10
 
 # height of bars that make up rough environment
 heightBars = 0.05
@@ -26,6 +26,6 @@ heightBars = 0.05
 dist = 30
 
 # sample size is number of runs per treatment
-sampleSize = 5
+sampleSize = 30
 
 
