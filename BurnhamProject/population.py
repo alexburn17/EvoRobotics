@@ -20,12 +20,12 @@ class POPULATION:
             result.append(self.p[i].fitness)
             return result[-1]
 
-    def Evaluate(self, envs, pp, pb):
+    def Evaluate(self, envs, pp, pb, dt):
         for i in self.p:
             self.p[i].Fitness = 0
         for e in range(0, c.numEnvs):
             for i in self.p:
-                self.p[i].Start_Evaluation(envs.envs[e], pp, pb)
+                self.p[i].Start_Evaluation(envs.envs[e], pp, pb, dt)
             for i in self.p:
                 self.p[i].Compute_Fitness()
         #for z in self.p:

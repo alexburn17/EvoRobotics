@@ -1,6 +1,6 @@
 import pyrosim
 import constants as c
-from robotFour import ROBOT
+from robotThree import ROBOT
 import random
 import math
 import numpy
@@ -20,10 +20,10 @@ class INDIVIDUAL:
         # fitness level (0 at outset)
         self.fitness = 0
 
-    def Start_Evaluation(self, env, pp, pb):
+    def Start_Evaluation(self, env, pp, pb, dt):
 
         # starts simulation
-        self.sim = pyrosim.Simulator(play_paused=pp, eval_time=c.evalTime, play_blind=pb)
+        self.sim = pyrosim.Simulator(play_paused=pp, eval_time=c.evalTime, play_blind=pb, dt=dt)
 
         # call to function ROBOT which generates the bot
         self.robot = ROBOT(self.sim, self.genome)

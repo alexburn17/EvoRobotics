@@ -15,7 +15,7 @@ for n in range(0, c.sampleSize):
     envs.Initialize()
     parents = POPULATION(c.popSize)
     parents.Initialize()
-    parents.Evaluate(envs, pp=False, pb=True)
+    parents.Evaluate(envs, pp=False, pb=True, dt=0.05)
     parents.Print()
 
     data = []

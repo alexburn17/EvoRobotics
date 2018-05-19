@@ -26,6 +26,6 @@ heightBars = 0.05
 dist = 30
 
 # sample size is number of runs per treatment
-sampleSize = 30
+sampleSize = 1
 
 
